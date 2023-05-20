@@ -1,0 +1,60 @@
+/* reposion */
+
+@media all and (max-width:739px) {
+
+    .search {
+        display: none;
+    }
+
+    .menu_bar {
+        display: block;
+        width: 14%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .navigation {
+        width: 100%;
+    }
+
+    .navigation>a:first-child>div {
+        width: 23%;
+    }
+
+    .navigation>a {
+        display: none;
+    }
+
+    .navigation .element_in_nav.more_sup {
+        display: none;
+    }
+
+    .navigation a:first-child {
+        display: block;
+    }
+
+
+
+
+    .navigation .element_in_nav {
+        display: block;
+        font-size: 15px;
+        text-align: left;
+        width: 100%;
+    }
+
+    #sidle .content_in_sidle {
+        display: none;
+    }
+
+    #content_introduce .text_content {
+        line-height: 1.4;
+        font-size: 14px;
+    }
+
+}
+
+@media all and(min-width:740px) and (max-width:1023px) {}
+
+@media all and (min-width:1024px) {}

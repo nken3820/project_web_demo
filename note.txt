@@ -1,0 +1,5 @@
+mobile : width < 740px;
+
+table : width >=740px  and width < 1024px;
+
+pc : width >= 1024px;

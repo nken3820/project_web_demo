@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.png" />
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
     <link rel="stylesheet" href="../assets/themify-icons/themify-icons.css" />
     <title>the band</title>
   </head>
@@ -13,16 +15,16 @@
     <div id="main">
       <div id="header">
         <div class="navigation">
-          <a href="">
+          <a href="#">
             <div class="element_in_nav">home</div>
           </a>
-          <a href="">
+          <a href="#content_introduce">
             <div class="element_in_nav">band</div>
           </a>
-          <a href="">
+          <a href="#content_tour">
             <div class="element_in_nav">toure</div>
           </a>
-          <a href="">
+          <a href="#content_contact">
             <div class="element_in_nav">contact</div>
           </a>
           <div class="element_in_nav more_sup" style="position: relative">
@@ -43,6 +45,9 @@
         <div class="search">
           <i class="ti-search" style="font-weight: 800"></i>
         </div>
+        <div class="menu_bar">
+          <i class="ti-menu" style="font-weight: 800"></i>
+        </div>
       </div>
       <div id="sidle">
         <div class="img_sidle"><img src="../assets/img/sile.jpg" alt="" /></div>
@@ -52,7 +57,8 @@
         </div>
       </div>
       <div id="content">
-        <div class="content_introduce">
+        <!-- the band -->
+        <div id="content_introduce" class="content_introduce">
           <div class="first_content">
             <h1>THE BAND</h1>
             <p>We love music</p>
@@ -85,7 +91,8 @@
             </div>
           </div>
         </div>
-        <div class="content_tour">
+        <!-- tour -->
+        <div id="content_tour" class="content_tour">
           <div class="container_content">
             <div class="first_content">
               <h1>TOUR DATES</h1>
@@ -152,7 +159,8 @@
             </div>
           </div>
         </div>
-        <div class="content_contact">
+        <!-- contact -->
+        <div id="content_contact" class="content_contact">
           <div class="first_content">
             <h1>CONTACT</h1>
             <p>Fan? Drop a note!</p>
@@ -173,16 +181,24 @@
               </div>
             </div>
             <div class="right_second_content">
-              <div class="name_and_email" style="margin-bottom: 8px">
+              <div class="name_and_email" style="margin-bottom: 6px">
                 <input
                   type="text"
-                  style="margin-right: 5px"
+                  style="margin-right: 5px; float: left; width: 47%"
                   placeholder="Name"
                 />
-                <input type="text" placeholder="Email" />
+                <input
+                  type="text"
+                  style="float: right; width: 47%"
+                  placeholder="Email"
+                />
               </div>
               <div class="message">
-                <input type="text" style="width: 99%" placeholder="Message" />
+                <input
+                  type="text"
+                  style="width: 100%; margin-top: 6px"
+                  placeholder="Message"
+                />
               </div>
               <div class="_element_send">
                 <button style="margin: 16px 0">SEND</button>
@@ -292,6 +308,48 @@
       modal_container.addEventListener("click", function (event) {
         event.stopPropagation();
       });
+    </script>
+
+    <script>
+      const menu = document.querySelector(".menu_bar");
+      const header = document.querySelector("#header");
+      const close_Menus = document.querySelectorAll(
+        ".navigation a[href*='#content_']"
+      );
+      const menuMore = document.querySelector(".more_sup");
+      const close_Menu_by_subMores = document.querySelectorAll(".sup_nav a");
+      let check_height = header.clientHeight;
+
+      function checkMenu() {
+        let heightMenu = header.clientHeight === check_height;
+        if (heightMenu) {
+          openMenu();
+        } else {
+          closeMenu();
+        }
+      }
+
+      function openMenu() {
+        header.classList.add("open");
+        header.style.overflow = "visible";
+        menuMore.style.display = "block";
+        for (const close_Menu of close_Menus) {
+          close_Menu.style.display = "block";
+        }
+      }
+
+      function closeMenu() {
+        header.classList.remove("open");
+        header.style.overflow = "hidden";
+      }
+
+      menu.addEventListener("click", checkMenu);
+      for (const close_Menu of close_Menus) {
+        close_Menu.addEventListener("click", closeMenu);
+      }
+      for (const close_Menu_by_subMore of close_Menu_by_subMores) {
+        close_Menu_by_subMore.addEventListener("click", closeMenu);
+      }
     </script>
   </body>
 </html>

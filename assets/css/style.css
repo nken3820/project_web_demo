@@ -20,16 +20,22 @@
     left: 0;
     right: 0;
     z-index: 10;
+    overflow: hidden;
+}
+
+#header.open {
+    height: auto;
 }
 
 html {
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 
 /* navigation */
 
 .navigation {
-    width: 60%;
+    width: 80%;
     float: left;
 }
 
@@ -44,7 +50,7 @@ html {
     text-align: center;
     font-size: 17px;
     text-transform: uppercase;
-    width: 12%;
+    padding: 0 24px;
 
 }
 
@@ -54,17 +60,27 @@ html {
     color: #000000;
 }
 
-.search {
-    width: 4.5%;
+.search,
+.menu_bar {
+    width: 5%;
     float: right;
     color: var(--color_main);
     line-height: var(--height_header);
     text-align: center;
 }
 
+.menu_bar {
+    display: none;
+}
+
 .search:hover {
     cursor: pointer;
     background-color: #f44336 !important;
+}
+
+.menu_bar:hover {
+    background-color: var(--background-color_main) !important;
+    color: #000000;
 }
 
 .more_sup:hover .sup_nav {
@@ -146,6 +162,7 @@ html {
 #content .container_content,
 #content .content_contact {
     width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 64px 16px;
 }
@@ -281,10 +298,11 @@ html {
 /* content_contact */
 
 .content_contact .second_content .left_second_content {
-    width: 50%;
+    width: 32%;
     text-align: left;
     float: left;
     margin-top: 14px;
+    margin-left: 2.5%;
 }
 
 .content_contact .icon_ {
@@ -299,13 +317,20 @@ html {
 }
 
 .content_contact .second_content .right_second_content {
-    width: 50%;
+    width: 55%;
     text-align: right;
     display: inline-block;
+    margin-right: -6%;
 }
 
 .content_contact input {
-    padding: 10px;
+    padding: 10px 15px;
+}
+
+.name_and_email::after {
+    display: table;
+    content: "";
+    clear: both;
 }
 
 .content_contact ._element_send button {
