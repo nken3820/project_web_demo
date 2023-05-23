@@ -20,11 +20,12 @@
     left: 0;
     right: 0;
     z-index: 10;
-    overflow: hidden;
 }
 
-#header.open {
-    height: auto;
+#header::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 html {
@@ -40,12 +41,12 @@ html {
 }
 
 .navigation>a,
-.element_in_nav {
+.navigation .element_in_nav {
     color: var(--color_main);
 }
 
 .navigation .element_in_nav {
-    display: inline-block;
+    display: inline-block !important;
     line-height: var(--height_header);
     text-align: center;
     font-size: 17px;
@@ -263,6 +264,10 @@ html {
     margin: 0 -8px;
 }
 
+.element_in_.second_ele {
+    margin: 0 16px;
+}
+
 .thirt_sencond .content_element {
     background-color: #fff;
     color: #000000;
@@ -327,11 +332,6 @@ html {
     padding: 10px 15px;
 }
 
-.name_and_email::after {
-    display: table;
-    content: "";
-    clear: both;
-}
 
 .content_contact ._element_send button {
     margin-top: 16px;

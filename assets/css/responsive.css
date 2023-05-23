@@ -2,17 +2,15 @@
 
 @media all and (max-width:739px) {
 
-    .search {
-        display: none;
+    #header {
+        overflow: hidden;
     }
 
-    .menu_bar {
-        display: block;
-        width: 14%;
-        position: absolute;
-        right: 0;
-        top: 0;
+    #header.open {
+        height: auto;
+        overflow: visible;
     }
+
 
     .navigation {
         width: 100%;
@@ -34,14 +32,38 @@
         display: block;
     }
 
-
-
-
     .navigation .element_in_nav {
         display: block;
         font-size: 15px;
         text-align: left;
         width: 100%;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .menu_bar {
+        display: block;
+        width: 14%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .element_in_nav.auto {
+        display: block;
+    }
+
+    .navigation .auto {
+        display: block;
+    }
+
+    .sup_nav {
+        right: 0;
+        padding: 0 20px;
+        background-color: #333;
+        color: aliceblue;
     }
 
     #sidle .content_in_sidle {
@@ -51,6 +73,57 @@
     #content_introduce .text_content {
         line-height: 1.4;
         font-size: 14px;
+    }
+
+    .content_introduce .last_content>div {
+        width: 55%;
+        padding: 15px 0;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .last_content>div>img {
+        width: 100%;
+    }
+
+
+    .thirt_sencond .element_in_ {
+        width: 100%;
+        margin-bottom: 8px;
+        padding: 8px 0;
+    }
+
+    .content_element .element_buy {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .element_in_.second_ele {
+        margin: 0;
+    }
+
+    .content_contact .second_content .left_second_content,
+    .content_contact .second_content .right_second_content {
+        float: none;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 23px;
+        width: 100%;
+    }
+
+
+    .name_and_email>input {
+        width: 100% !important;
+        display: block;
+        float: none;
+    }
+
+    .name_and_email .name {
+        margin-bottom: 6px;
+    }
+
+    ._element_send>button {
+        width: 100% !important;
     }
 
 }

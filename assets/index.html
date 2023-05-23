@@ -27,7 +27,7 @@
           <a href="#content_contact">
             <div class="element_in_nav">contact</div>
           </a>
-          <div class="element_in_nav more_sup" style="position: relative">
+          <div class="element_in_nav more_sup auto" style="position: relative">
             more <i class="nav_arrow_down ti-angle-down"></i>
             <div class="sup_nav">
               <a style="text-decoration: none">
@@ -130,7 +130,7 @@
                   <button class="element_buy js-buy-ticket">Buy Tickets</button>
                 </div>
               </div>
-              <div class="element_in_" style="margin: 0 16px">
+              <div class="element_in_ second_ele">
                 <div class="bg_element_in">
                   <img src="../assets/img/paris.jpg" alt="" width="100%" />
                 </div>
@@ -183,11 +183,13 @@
             <div class="right_second_content">
               <div class="name_and_email" style="margin-bottom: 6px">
                 <input
+                  class="name"
                   type="text"
                   style="margin-right: 5px; float: left; width: 47%"
                   placeholder="Name"
                 />
                 <input
+                  class="email"
                   type="text"
                   style="float: right; width: 47%"
                   placeholder="Email"
@@ -322,6 +324,7 @@
 
       function checkMenu() {
         let heightMenu = header.clientHeight === check_height;
+
         if (heightMenu) {
           openMenu();
         } else {
@@ -329,18 +332,23 @@
         }
       }
 
+      function autocloseMenu() {
+        let widthHeader = check_width > 739;
+        if (widthHeader) {
+          console.log("ken");
+        }
+      }
+
       function openMenu() {
         header.classList.add("open");
-        header.style.overflow = "visible";
-        menuMore.style.display = "block";
+        menuMore.classList.add("auto");
         for (const close_Menu of close_Menus) {
-          close_Menu.style.display = "block";
+          close_Menu.classList.add("auto");
         }
       }
 
       function closeMenu() {
         header.classList.remove("open");
-        header.style.overflow = "hidden";
       }
 
       menu.addEventListener("click", checkMenu);
